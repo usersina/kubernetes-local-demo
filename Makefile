@@ -29,6 +29,7 @@ apply-all:
 # Deletes all resources with specified labels
 delete-all:
 	kubectl delete all -l app=mongo && \
-	kubectl delete all -l app=webapp
-
+	kubectl delete all -l app=webapp && \
+	kubectl delete configmap mongo-config && \
+	kubectl delete secret mongo-secret
 ####################################################################
