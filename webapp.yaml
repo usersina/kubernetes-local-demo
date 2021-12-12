@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deployment
+  labels:
+    app: webapp
+spec:
+  # To scale the database, use "StatefulSet" instead of "Deployment"
+  replicas: 1
+  # All the pods that match the custom defined "app" label belong to this deployment
+  selector:
+    matchLabels:
+      app: webapp
+  # The next part configures the pod within the deployment
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+        - name: webapp
+          image: nanajanashia/k8s-demo-app:v1.0
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-service
+spec:
+  # The server forwards the request to the endpoint pod with the specified selector name
+  selector:
+    app: webapp
+  ports:
+    - protocol: TCP
+      port: 3000 # can be any value
+      targetPort: 3000 # should match the pod container port
