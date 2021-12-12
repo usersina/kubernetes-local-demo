@@ -88,7 +88,7 @@ kubectl logs your-pod-name
 
 To get the list of services
 ```BASH
-kubect get services
+kubectl get services
 ```
 
 Simply forward the service running at 3000 to the local machine at port 80
