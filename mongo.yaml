@@ -45,6 +45,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mongo-service
+  labels:
+    app: mongo
 spec:
   # The server forwards the request to the endpoint pod with the specified selector name
   selector:
