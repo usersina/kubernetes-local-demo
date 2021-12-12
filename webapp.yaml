@@ -5,13 +5,10 @@ metadata:
   labels:
     app: webapp
 spec:
-  # To scale the database, use "StatefulSet" instead of "Deployment"
   replicas: 1
-  # All the pods that match the custom defined "app" label belong to this deployment
   selector:
     matchLabels:
       app: webapp
-  # The next part configures the pod within the deployment
   template:
     metadata:
       labels:
@@ -28,10 +25,9 @@ kind: Service
 metadata:
   name: webapp-service
 spec:
-  # The server forwards the request to the endpoint pod with the specified selector name
   selector:
     app: webapp
   ports:
     - protocol: TCP
-      port: 3000 # can be any value
-      targetPort: 3000 # should match the pod container port
+      port: 3000
+      targetPort: 3000
