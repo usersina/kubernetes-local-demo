@@ -57,3 +57,4 @@ make delete-hello-world
 ### References:
 - https://minikube.sigs.k8s.io/docs/start/
 - https://kubernetes.io/docs/home/
+- https://hub.docker.com/
