@@ -101,6 +101,8 @@ The app should then be available on
 
 
 ### References:
+- https://www.udemy.com/course/devops-with-docker-kubernetes-and-azure-devops/
+- https://www.youtube.com/watch?v=s_o8dwzRlu4
 - https://minikube.sigs.k8s.io/docs/start/
 - https://kubernetes.io/docs/home/
 - https://hub.docker.com/
